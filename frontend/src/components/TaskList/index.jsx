@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import useTasks from '../../hooks/useTasks'
 
 const TaskList = () => {
-  const { tasks } = useTasks();
+  const { tasks, deleteTask } = useTasks();
 
   return (
     <Main>
@@ -47,6 +47,7 @@ const TaskList = () => {
                 <TableCell>
                   <Btn
                     type="button"
+                    onClick={ () => deleteTask(row._id)}
                   >
                     Excluir
                   </Btn>

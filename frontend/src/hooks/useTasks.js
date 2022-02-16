@@ -35,7 +35,11 @@ const useTasks = () => {
     setName('')
   }
 
-  return { name, tasks, handleChange, createTask }
+  const deleteTask = (id) => {
+    axios.delete(`http://localhost:3001/${id}`)
+  }
+
+  return { name, tasks, handleChange, createTask, deleteTask }
 }
 
 export default useTasks;
