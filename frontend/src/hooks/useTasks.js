@@ -35,11 +35,27 @@ const useTasks = () => {
     setName('')
   }
 
-  const deleteTask = (id) => {
-    axios.delete(`http://localhost:3001/${id}`)
+  const deleteTask = async (id) => {
+    axios.delete(`http://localhost:3001/${id}`);
   }
 
-  return { name, tasks, handleChange, createTask, deleteTask }
+  const updateTask = async (id, status) => {
+    let newStatus = 'Em andamento';
+
+    if (status === 'Concluído') {
+      newStatus = 'Pendente';
+    }
+
+    if (status === 'Em andamento') {
+      newStatus = 'Concluído';
+    }
+
+    axios.put(`http://localhost:3001/${id}`, {
+      status: newStatus,
+    })
+  }
+
+  return { name, tasks, handleChange, createTask, deleteTask, updateTask }
 }
 
 export default useTasks;

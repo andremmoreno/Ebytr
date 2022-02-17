@@ -5,7 +5,7 @@ module.exports = async (body) => {
 
   const entity = {
     name,
-    status: 'em andamento',
+    status: 'Pendente',
     date: new Date(),
   };
 

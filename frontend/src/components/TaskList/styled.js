@@ -15,6 +15,9 @@ export const TableContainerStyled = styled(TableContainer)`
 `
 
 export const Btn = styled.button`
+  padding: 2px;
+  background-color: #7B6EFF;
+  border-radius: 5px;
 `
 
 export const HList = styled.h2`

@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import useTasks from '../../hooks/useTasks'
 
 const TaskList = () => {
-  const { tasks, deleteTask } = useTasks();
+  const { tasks, deleteTask, updateTask } = useTasks();
 
   return (
     <Main>
@@ -40,6 +40,7 @@ const TaskList = () => {
                 <TableCell>
                   <Btn
                     type="button"
+                    onClick={ () => updateTask(row._id, row.status)}
                   >
                     Alterar Status
                   </Btn>
